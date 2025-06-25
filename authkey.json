@@ -1,0 +1,12 @@
+[
+  {
+    "KEY": "ZENIX",
+    "STATUS": "active",
+    "OWNER": "Zenix Dev"
+  },
+  {
+    "KEY": "EXPIRED-456",
+    "STATUS": "banned",
+    "OWNER": "ExUser"
+  }
+]
