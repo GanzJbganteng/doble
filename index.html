@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Zenix-Bug Dashboard</title>
+
+  <!-- Icons + Styles -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="sidebar-closed">
+
+  <!-- ===== TOP-BAR ===== -->
+  <header class="topbar">
+    <button id="ham" class="ham"><i data-lucide="menu"></i></button>
+
+    <!-- search -->
+    <div class="search-wrap">
+      <i data-lucide="search"></i>
+      <input id="search" placeholder="Cari Func…" />
+    </div>
+
+    <button id="themeToggle" class="notify">🌙</button>
+  </header>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside id="sidebar" class="sidebar closed">
+    <div class="brand">
+      <img class="avatar" src="https://i.ibb.co/SJGxvDs/avatar.jpg" alt="">
+      <h1>Zenix-API</h1>
+      <span class="badge online">Online</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a data-page="home"  class="active"><i data-lucide="home"></i> Beranda</a></li>
+        <li><a data-page="func"               ><i data-lucide="bug"></i> Func Bug</a></li>
+        <li><a data-page="about"              ><i data-lucide="info"></i> Tentang</a></li>
+        <li><a href="https://github.com" target="_blank"><i data-lucide="github"></i> GitHub</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main class="content">
+
+    <!-- HOME -->
+    <section id="homeSection" class="page">
+      <div class="hero">
+        <h1 class="glow-h1">Kairo-Bug</h1>
+        <span class="version">v1.0</span>
+        <p class="glow-sub">✨ Simple & powerful func-bug library</p>
+      </div>
+    </section>
+
+    <!-- FUNC BUG LIST -->
+    <section id="funcSection" class="page hidden">
+      <h2 class="section-title">Daftar Func</h2>
+      <div id="cardWrap" class="card-list"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="aboutSection" class="page hidden">
+      <h2 class="section-title">Tentang</h2>
+      <p>Dashboard statis untuk berbagi func bug crash WhatsApp &
+         utility script. Dibuat dengan ❤ oleh kamu.</p>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <button class="close" onclick="closeModal()"><i data-lucide="x"></i></button>
+      <h3 id="modalTitle"></h3>
+      <p class="endpoint-label">Endpoint</p>
+      <div class="endpoint">
+        <code id="endpointText"></code>
+        <button onclick="copyEndpoint()"><i data-lucide="copy"></i></button>
+      </div>
+
+      <p class="param-label">Func Bug</p>
+      <textarea id="funcArea" readonly></textarea>
+
+      <button class="btn-copy" onclick="copyFunc()">
+        <i data-lucide="clipboard-check"></i> Copy
+      </button>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- SCRIPTS -->
+  <script src="func.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
